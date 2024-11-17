@@ -3,7 +3,7 @@ import datetime as dt
 
 my_email = "abc@gamil.com" # from which you want to send msg
 other_email = "xyz@gmail.com" # to you want to send msg
-password_my_email = "my_pass" # not your email password but generated from google app ,read readme file
+app_password = "my_pass" # not your email password but generated from google app ,read readme file
 
 url_ = "http://api.open-notify.org/iss-now.json"
 
@@ -26,6 +26,6 @@ while True:
 
         connection = smtplib.SMTP("smtp.gmail.com",587)
         connection.starttls()
-        connection.login(user=my_email,password=password_my_email)
+        connection.login(user=my_email,password=app_password)
         connection.sendmail(from_addr=my_email, to_addrs=other_email, msg="see iss is above you")
         connection.close()    
